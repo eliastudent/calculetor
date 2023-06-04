@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript calculetor</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .calculator {
+            background-color: burlywood;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: center;
+        }
+
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+
+        button {
+            padding: 5px;
+            font-size: 10px;
+            text-align: center;
+            background-color: #e0e0e0;
+            /*border: none;*/
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ccc;
+        }
+
+        button:active {
+            background-color: #b3b3b3;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="calculator">
+    <h2>JavaScript calculetor</h2>
+
+    <p>
+        number x :
+        <input type="number" id="number1" placeholder="Insert number one">
+    </p>
+    <p>
+        number y :
+        <input type="number" id="number2" placeholder="Insert number two">
+    </p>
+    <div id="result"></div>
+    <br>
+    <button onclick="calculate()">press to calculate</button>
+
+</div>
+
+<script>
+    function calculate() {
+        var number1 = document.getElementById("number1").value;
+        var number2 = document.getElementById("number2").value;
+        var result = document.getElementById("result");
+
+        if (isNaN(number1) || isNaN(number2)) {
+            result.innerHTML = "Please enter valid numbers";
+        } else {
+            var sum = Number(number1) + Number(number2);
+            var product = number1 * number2;
+
+            result.innerHTML = "The result of the connection is:" + sum + "<br>";
+            result.innerHTML += "The result of the multiplication is:" + product;
+        }
+    }
+</script>
+</body>
+</html>
